@@ -1,4 +1,3 @@
-```markdown
 # Tabnabbing Vulnerability Demo
 
 This project demonstrates a common web security vulnerability known as **tabnabbing**.  
@@ -8,7 +7,7 @@ The demo also includes the **fix**, showing how to prevent this attack using the
 
 ---
 
-## 🚀 How to Run the Demo
+## How to Run the Demo
 
 You can run this demo in two ways:
 
@@ -42,27 +41,27 @@ This method regenerates the demo files using the provided script.
 5. Once the script finishes, open the newly created `index.html` in your browser and click the button to see the demo.
 
 ---
+### The Fix
 
-## 🛠️ The Vulnerability and the Fix
+The code in this repository uses a JavaScript `window.open()` function to demonstrate the vulnerability. The fix is to sever the connection between the original tab and the new tab by blocking access to the `window.opener` object.
 
-The code in this project uses a JavaScript `window.open()` call to demonstrate the vulnerability.
+To apply the fix to the code in this project, open the `index.html` file.
 
-### Vulnerable JavaScript Code
-```javascript
-// Opens a malicious page without protection
-window.open('malicious.html');
-```
-And replace it with this line, which adds 'noopener' as the third argument:
+Since **"window.open('malicious.html');"** 
+Opens a malicious page without protection find the "window.open('malicious.html');"
+line within the `<script>` tag and replace it with this line, which adds 'noopener' as the third argument.
 
-### Fixed JavaScript Code
 ```javascript
 // Opens a new tab safely by severing access to window.opener
 window.open('malicious.html', '_blank', 'noopener');
 ```
+Now go back and see the magic happens on the original tab **(which is index.html page) **
+
+🎉 Congratulations! You’ve successfully completed the Tabnabbing demo and learned how to protect your apps against this attack.
 
 ---
-### Note on Standard HTML Links 
-For projects that use a standard HTML <a> tag instead of JavaScript, the fix is to add the rel="noopener noreferrer" attribute.
+### Note for Standard HTML Links
+For projects that use a standard HTML `<a>` tag instead of JavaScript, the fix is to add the rel="noopener noreferrer" attribute.
 
 ### Vulnerable HTML Link
 ```html
@@ -76,7 +75,7 @@ For projects that use a standard HTML <a> tag instead of JavaScript, the fix is 
 
 ---
 
-## 📚 Additional Notes
+## Additional Notes
 
 - `noopener` ensures the new tab does not have access to `window.opener`.  
 - `noreferrer` additionally hides the referrer information.  
@@ -84,25 +83,29 @@ For projects that use a standard HTML <a> tag instead of JavaScript, the fix is 
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions, issues, and suggestions are welcome!  
 Feel free to open a pull request or file an issue if you’d like to improve the demo.
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.  
 You are free to use, modify, and distribute it as long as proper attribution is provided.
 
 ---
 
-## 🔗 Further Reading
+## Further Reading
 
 - [MDN Web Docs: `rel=noopener`](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener)  
 - [OWASP: Tabnabbing](https://owasp.org/www-community/attacks/Reverse_Tabnabbing)  
 - [HTML Living Standard: `a` element](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element)
 
+
+## Acknowledgments
+
+This project was inspired by [Protect your Website from Target="_blank" vulnerability](https://www.youtube.com/watch?v=0hNDDpljJrs) YouTube demo-video.
+
 ---
-```
