@@ -1,44 +1,24 @@
 # Tabnabbing Vulnerability Demo
 
 This project demonstrates a common web security vulnerability known as **tabnabbing**.  
-It uses three simple HTML files to show how a malicious page opened with `target="_blank"` can secretly redirect the original page to a fake phishing site.  
 
-The demo also includes the **fix**, showing how to prevent this attack using the `rel="noopener noreferrer"` attribute.
+- It uses three simple HTML files to show how a malicious page opened with `target="_blank"` can secretly redirect the original page to a fake phishing site.  
 
----
+- The demo also includes the **fix**, showing how to prevent this attack using the `rel="noopener noreferrer"` attribute.
 
 ## How to Run the Demo
 
-You can run this demo in two ways:
-
-### Method 1: Direct Method
 The HTML files are already included in this repository.
 
-1. Clone or download this repository.
-2. Open the `index.html` file in your web browser.
+1. To clone the repo run this command on your terminal:
+
+```bash
+   git clone https://github.com/medenhan/tabnabbing-demo.git
+   ```
+
+2. Navigate into the new folder and open `index.html` file in your web browser.
 3. Click the **"Click Here for a Prize!"** button.
-4. Observe how the original tab is secretly redirected to the fake login page.
-
----
-
-### Method 2: Using the Setup Script
-This method regenerates the demo files using the provided script.
-
-1. Clone or download this repository.
-2. Open a terminal in the project’s directory.
-3. Make the script executable:
-
-   ```bash
-   chmod +x setup.sh
-   ```
-
-4. Run the script:
-
-   ```bash
-   ./setup.sh
-   ```
-
-5. Once the script finishes, open the newly created `index.html` in your browser and click the button to see the demo.
+4. Then go back and observe how the original tab is secretly redirected to the fake login page.
 
 ---
 ### The Fix
@@ -82,6 +62,31 @@ For projects that use a standard HTML `<a>` tag instead of JavaScript, the fix i
 - Always use these attributes when opening untrusted or external links with `target="_blank"`.  
 
 ---
+## About the Setup Script (Optional)
+This repository includes an automation script, setup.sh, that can regenerate the three HTML demo files from scratch.
+
+This script is not needed to run the demo but is included to demonstrate how the project environment can be built automatically. To use it, run the following commands from the project's directory:
+
+### Using the Setup Script
+This method regenerates the demo files using the provided script.
+
+1. Copy setup.sh code file from this repository.
+2. Go to your directory, create new file and open it with your prefered code editor or note editor like notepad 
+3. paste the code and save it setup.sh
+4. Open a terminal in the project’s directory.
+5. Make the script executable:
+
+   ```bash
+   chmod +x setup.sh
+   ```
+
+4. Run the script:
+
+   ```bash
+   ./setup.sh
+   ```
+
+5. Once the script finishes, open the newly created `index.html` in your browser and click the button to see the demo.
 
 ## Contributing
 
