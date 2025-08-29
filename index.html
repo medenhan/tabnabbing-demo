@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Totally Safe Page</title>
+</head>
+<body>
+    <h1>My Secure Website</h1>
+    <p>Click the button below for a special offer!</p>
+    <button onclick="openInNewTab()">Click Here for a Prize!</button>
+    <script>
+        function openInNewTab() {
+            window.open('malicious.html');
+        }
+    </script>
+</body>
+</html>
