@@ -20,7 +20,6 @@ The HTML files are already included in this repository.
 3. Click the **"Click Here for a Prize!"** button.
 4. Then go back and observe how the original tab is secretly redirected to the fake login page.
 
----
 ### The Fix
 
 The code in this repository uses a JavaScript `window.open()` function to demonstrate the vulnerability. The fix is to sever the connection between the original tab and the new tab by blocking access to the `window.opener` object.
@@ -41,8 +40,7 @@ After applying this change, the original tab (index.html) will remain secure and
 
 🎉 Congratulations! You have now successfully mitigated the Tabnabbing vulnerability.
 
----
-### Note for Standard HTML Links
+## Note
 For projects that use a standard HTML `<a>` tag instead of JavaScript, the fix is to add the rel="noopener noreferrer" attribute.
 
 ### Vulnerable HTML Link
@@ -54,55 +52,20 @@ For projects that use a standard HTML `<a>` tag instead of JavaScript, the fix i
 ```html
 <a href="malicious.html" target="_blank" rel="noopener noreferrer">Click Here</a>
 ```
-
----
-
-## Additional Notes
-
 - `noopener` ensures the new tab does not have access to `window.opener`.  
 - `noreferrer` additionally hides the referrer information.  
 - Always use these attributes when opening untrusted or external links with `target="_blank"`.  
-
----
-## About the Setup Script (Optional)
-This repository includes an automation script, setup.sh, that can regenerate the three HTML demo files from scratch.
-
-This script is not needed to run the demo but is included to demonstrate how the project environment can be built automatically. To use it, run the following commands from the project's directory:
-
-### Using the Setup Script
-This method regenerates the demo files using the provided script.
-
-1. Copy setup.sh code file from this repository.
-2. Go to your directory, create new file and open it with your prefered code editor or note editor like notepad 
-3. paste the code and save it setup.sh
-4. Open a terminal in the project’s directory.
-5. Make the script executable:
-
-   ```bash
-   chmod +x setup.sh
-   ```
-
-4. Run the script:
-
-   ```bash
-   ./setup.sh
-   ```
-
-5. Once the script finishes, open the newly created `index.html` in your browser and click the button to see the demo.
 
 ## Contributing
 
 Contributions, issues, and suggestions are welcome!  
 Feel free to open a pull request or file an issue if you’d like to improve the demo.
 
----
-
 ## License
 
 This project is licensed under the MIT License.  
 You are free to use, modify, and distribute it as long as proper attribution is provided.
 
----
 
 ## Further Reading
 
@@ -114,5 +77,3 @@ You are free to use, modify, and distribute it as long as proper attribution is 
 ## Acknowledgments
 
 This project was inspired by [Protect your Website from Target="_blank" vulnerability](https://www.youtube.com/watch?v=0hNDDpljJrs) YouTube demo-video.
-
----
