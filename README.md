@@ -25,19 +25,21 @@ The HTML files are already included in this repository.
 
 The code in this repository uses a JavaScript `window.open()` function to demonstrate the vulnerability. The fix is to sever the connection between the original tab and the new tab by blocking access to the `window.opener` object.
 
-To apply the fix to the code in this project, open the `index.html` file.
+To apply the fix, open the index.html file and find this vulnerable line within the <script> tag:
 
-Since **"window.open('malicious.html');"** 
-Opens a malicious page without protection find the "window.open('malicious.html');"
-line within the `<script>` tag and replace it with this line, which adds 'noopener' as the third argument.
+```javascript
+// This line is vulnerable because it gives the new tab access to the original tab.
+window.open('malicious.html');
+```
+Replace it with the following fixed line. The addition of 'noopener' as the third argument severs the connection between the tabs, blocking the attack.
 
 ```javascript
 // Opens a new tab safely by severing access to window.opener
 window.open('malicious.html', '_blank', 'noopener');
 ```
-Now go back and see the magic happens on the original tab **(which is index.html page) **
+After applying this change, the original tab (index.html) will remain secure and will not be redirected. 
 
-🎉 Congratulations! You’ve successfully completed the Tabnabbing demo and learned how to protect your apps against this attack.
+🎉 Congratulations! You have now successfully mitigated the Tabnabbing vulnerability.
 
 ---
 ### Note for Standard HTML Links
