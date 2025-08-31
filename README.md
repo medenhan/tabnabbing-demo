@@ -1,10 +1,10 @@
 # Tabnabbing Vulnerability Demo
 
-This project demonstrates a common web security vulnerability known as **tabnabbing**.  
+This project demonstrates a web security vulnerability known as 'tabnabbing.' It uses a JavaScript window.open() function to show how a malicious page can secretly redirect the original page that opened it. 
 
-- It uses three simple HTML files to show how a malicious page opened with `target="_blank"` can secretly redirect the original page to a fake phishing site.  
+While this vulnerability is historically associated with target="_blank", this demo uses window.open() as it remains a reliable way to show the exploit in many modern browsers, like Chrome. They essentially treat links with target="_blank" as if they have noopener to protect users, even if the rel="noopener" attribute is missing. 
 
-- The demo also includes the **fix**, showing how to prevent this attack using the `rel="noopener noreferrer"` attribute.
+The demo also includes the fix, showing how to prevent this attack.
 
 ## How to Run the Demo
 
