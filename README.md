@@ -71,7 +71,6 @@ You are free to use, modify, and distribute it as long as proper attribution is 
 
 - [MDN Web Docs: `rel=noopener`](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener)  
 - [OWASP: Tabnabbing](https://owasp.org/www-community/attacks/Reverse_Tabnabbing)  
-- [HTML Living Standard: `a` element](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element)
 
 
 ## Acknowledgments
